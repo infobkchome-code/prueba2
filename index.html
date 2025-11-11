@@ -102,20 +102,20 @@
       </div>
 
       <!-- Imagen local + fallback -->
-      <picture class="rounded-3xl shadow-card overflow-hidden block">
-        <img
-          id="heroImg"
-          src="/assets/hero.jpg"
-          alt="Pareja revisando su hipoteca desde casa"
-          class="w-full h-auto bg-gradient-to-br from-brand-dark/20 via-brand-primary/10 to-brand-accent/10"
-          loading="eager"
-          fetchpriority="high"
-          onerror="
-            this.onerror=null;
-            this.src='https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1400';
-          "
-        />
-      </picture>
+     <picture class="rounded-3xl shadow-card overflow-hidden block">
+  <img
+    id="heroImg"
+    src="/assets/hero.jpg"  <!-- usa tu archivo local -->
+    alt="Pareja feliz mostrando la llave de su nueva casa"
+    class="w-full h-auto bg-gradient-to-br from-brand-dark/20 via-brand-primary/10 to-brand-accent/10"
+    loading="eager"
+    fetchpriority="high"
+    onerror="
+      this.onerror=null;
+      this.src='https://images.pexels.com/photos/8293777/pexels-photo-8293777.jpeg?auto=compress&cs=tinysrgb&w=1600';
+    "
+  />
+</picture>
     </div>
   </section>
 
