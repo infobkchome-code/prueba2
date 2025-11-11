@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hipotecas BKC · Estudio gratuito y acompañamiento</title>
+  <meta name="description" content="Comparamos bancos y te conseguimos la mejor hipoteca. Estudio gratuito y acompañamiento hasta la firma.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: "#0b261f",
+              primary: "#0d3b2e",
+              accent: "#c8a34a",
+              light: "#f7f7f5",
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .glass { backdrop-filter: blur(10px) saturate(150%); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-light min-h-screen text-zinc-900">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-brand-dark/95 glass shadow-lg">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-5 py-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-brand-accent rounded-xl"></div>
+        <div>
+          <p class="text-white font-bold text-lg">Hipotecas BKC</p>
+          <p class="text-white/70 text-xs">Estudio gratuito y acompañamiento</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-white/80 text-sm">
+        <a href="#ventajas" class="hover:text-white">Ventajas</a>
+        <a href="#tipos" class="hover:text-white">Tipos</a>
+        <a href="#simulador" class="hover:text-white">Simulador</a>
+        <a href="#contacto" class="hover:text-white">Contacto</a>
+      </nav>
+      <a href="https://wa.me/34617476695?text=Hola%20Hipotecas%20BKC%2C%20quiero%20mi%20estudio%20gratuito" target="_blank"
+         class="hidden md:inline-flex items-center gap-2 bg-brand-accent text-brand-dark px-4 py-2 rounded-2xl font-medium text-sm hover:bg-yellow-500 transition">
+        <i data-lucide="message-circle" class="h-4 w-4"></i> WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-5 py-20 text-center md:text-left grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+        Tu hipoteca, <span class="text-brand-accent">sin estrés</span> y al mejor tipo
+      </h1>
+      <p class="mt-4 text-white/90 text-lg">Comparamos bancos, negociamos por ti y te acompañamos hasta la firma.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+        <a href="#simulador" class="bg-brand-accent text-brand-dark font-semibold px-6 py-3 rounded-2xl hover:bg-yellow-500 transition">Simular cuota</a>
+        <a href="#contacto" class="border border-white/40 text-white/90 font-semibold px-6 py-3 rounded-2xl hover:text-white">Solicitar estudio</a>
+      </div>
+    </div>
+    <div class="bg-white/90 rounded-3xl p-6 md:p-8 shadow-lg">
+      <h3 class="text-xl font-bold text-brand-primary mb-4">Solicitud rápida</h3>
+      <form class="grid gap-4 text-sm" onsubmit="event.preventDefault();window.location.href='https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca'">
+        <input class="rounded-xl border border-black/10 px-4 py-3" placeholder="Nombre completo" required>
+        <input class="rounded-xl border border-black/10 px-4 py-3" placeholder="Teléfono" required>
+        <input type="email" class="rounded-xl border border-black/10 px-4 py-3" placeholder="Email" required>
+        <select class="rounded-xl border border-black/10 px-4 py-3">
+          <option>Compra de vivienda</option>
+          <option>Subrogación</option>
+          <option>Novación</option>
+          <option>Autopromoción</option>
+        </select>
+        <button class="bg-brand-primary text-white px-5 py-3 rounded-2xl font-semibold hover:bg-emerald-900 transition">Enviar solicitud</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- VENTAJAS -->
+  <section id="ventajas" class="py-20 bg-white/90">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary">Ventajas de trabajar con BKC</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6 text-left">
+        <div class="p-6 bg-white rounded-3xl shadow border border-black/5">
+          <i data-lucide="trending-up" class="h-7 w-7 text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">Mejores condiciones</h3>
+          <p class="text-black/70 text-sm mt-2">Acceso a más de 20 entidades financieras para conseguir el tipo más bajo.</p>
+        </div>
+        <div class="p-6 bg-white rounded-3xl shadow border border-black/5">
+          <i data-lucide="clock" class="h-7 w-7 text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">Ahorro de tiempo</h3>
+          <p class="text-black/70 text-sm mt-2">Centralizamos estudio, documentación, tasación y notaría.</p>
+        </div>
+        <div class="p-6 bg-white rounded-3xl shadow border border-black/5">
+          <i data-lucide="shield" class="h-7 w-7 text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">Seguridad y transparencia</h3>
+          <p class="text-black/70 text-sm mt-2">Cumplimos la Ley 5/2019 de Crédito Inmobiliario y RGPD.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR -->
+  <section id="simulador" class="py-20 bg-brand-primary text-white">
+    <div class="max-w-7xl mx-auto px-5">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-8">Simulador rápido de hipoteca</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white/10 rounded-3xl p-6">
+          <label class="block mb-3 text-sm">Importe del préstamo (€)</label>
+          <input id="cap" type="number" class="w-full rounded-xl px-4 py-3 text-black" value="180000">
+          <label class="block mt-4 mb-3 text-sm">Interés (%)</label>
+          <input id="int" type="number" class="w-full rounded-xl px-4 py-3 text-black" value="3.2">
+          <label class="block mt-4 mb-3 text-sm">Plazo (años)</label>
+          <input id="pla" type="number" class="w-full rounded-xl px-4 py-3 text-black" value="30">
+          <button onclick="calc()" class="mt-6 bg-brand-accent text-brand-dark font-semibold px-5 py-3 rounded-2xl hover:bg-yellow-500 transition">Calcular cuota</button>
+        </div>
+        <div class="rounded-3xl bg-white/10 p-6">
+          <p class="opacity-80 text-sm mb-2">Cuota mensual estimada</p>
+          <h3 id="cuota" class="text-5xl font-extrabold">—</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary">Hablemos de tu hipoteca</h2>
+        <p class="mt-3 text-black/70">Calle de la Canaleja 3, Alcorcón (Madrid)</p>
+        <div class="mt-5 text-black/80 space-y-2">
+          <p><i data-lucide="phone" class="inline h-4 w-4 text-brand-primary"></i> +34 617 476 695</p>
+          <p><i data-lucide="mail" class="inline h-4 w-4 text-brand-primary"></i> info@hipotecasbkc.es</p>
+        </div>
+        <a href="https://wa.me/34617476695" target="_blank" class="mt-6 inline-flex items-center gap-2 bg-brand-primary text-white px-5 py-3 rounded-2xl font-semibold hover:bg-emerald-900 transition">
+          Contactar por WhatsApp <i data-lucide="message-circle" class="h-4 w-4"></i>
+        </a>
+      </div>
+      <div class="bg-brand-light rounded-3xl p-6 shadow-md">
+        <h3 class="text-lg font-bold text-brand-primary mb-3">Solicita tu estudio gratuito</h3>
+        <form class="grid gap-3 text-sm" onsubmit="event.preventDefault();window.location.href='https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca'">
+          <input class="rounded-xl px-4 py-3 border border-black/10" placeholder="Nombre completo" required>
+          <input class="rounded-xl px-4 py-3 border border-black/10" placeholder="Teléfono" required>
+          <button class="bg-brand-accent text-brand-dark font-semibold px-5 py-3 rounded-2xl hover:bg-yellow-500 transition">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-white/70 py-8 text-center text-sm">
+    © <span id="year"></span> Hipotecas BKC · Todos los derechos reservados.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const eur = n => new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
+    function calc(){
+      const C=+cap.value,i=(+int.value/100)/12,n=+pla.value*12;
+      const cuota=(C*i)/(1-Math.pow(1+i,-n));
+      cuota?document.getElementById("cuota").textContent=eur(cuota):document.getElementById("cuota").textContent="—";
+    }
+    calc();
+    document.getElementById("year").textContent=new Date().getFullYear();
+  </script>
+
+</body>
+</html>
