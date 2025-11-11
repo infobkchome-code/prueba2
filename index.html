@@ -69,7 +69,11 @@
       <nav class="hidden md:flex items-center gap-6 text-white/90">
         <a href="#ventajas" class="hover:text-white">Ventajas</a>
         <a href="#bancos" class="hover:text-white">Bancos</a>
+        <a href="#casos" class="hover:text-white">Casos reales</a>
         <a href="#simulador" class="hover:text-white">Simulador</a>
+        <a href="#guia" class="hover:text-white">Guía</a>
+        <a href="#opiniones" class="hover:text-white">Opiniones</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
         <a href="#contacto" class="hover:text-white">Contacto</a>
       </nav>
       <a href="#contacto" class="rounded-2xl bg-brand-accent text-brand-dark px-4 py-2 text-sm font-semibold hover:brightness-110">
@@ -114,7 +118,7 @@
     </picture>
   </section>
 
-  <!-- (VENTAJAS compactas encima de bancos) -->
+  <!-- (VENTAJAS compactas) -->
   <section id="ventajas" class="bg-white">
     <div class="max-w-7xl mx-auto px-4 pb-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
       <div class="flex items-center gap-3 p-4 rounded-2xl border border-gray-200 bg-white shadow-soft">
@@ -145,7 +149,7 @@
       </div>
       <div class="bancos-marquee mt-6 rounded-2xl border border-gray-200 bg-white/80 shadow-soft">
         <div class="bancos-track py-6 px-6">
-          <!-- logos duplicados -->
+          <!-- logos duplicados para scroll infinito -->
           <img src="https://logo.clearbit.com/santander.com" class="logo-img" alt="Santander" />
           <img src="https://logo.clearbit.com/bbva.com" class="logo-img" alt="BBVA" />
           <img src="https://logo.clearbit.com/caixabank.es" class="logo-img" alt="CaixaBank" />
@@ -170,6 +174,47 @@
         </div>
       </div>
       <p class="mt-4 text-xs text-gray-500">Marcas pertenecientes a sus respectivos titulares. Logotipos con fines identificativos.</p>
+    </div>
+  </section>
+
+  <!-- CASOS REALES -->
+  <section id="casos" class="py-14 md:py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center gap-3">
+        <i data-lucide="check-circle" class="h-6 w-6 text-brand-primary"></i>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary">Casos reales</h2>
+      </div>
+      <p class="mt-2 text-gray-600">Resultados recientes obtenidos para clientes con perfiles distintos.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-3xl p-6 border border-gray-200 shadow-soft bg-white">
+          <div class="text-sm text-gray-500">Pareja con nómina estable</div>
+          <h3 class="mt-1 font-semibold text-brand-primary">Compra 1ª vivienda · 80% financiación</h3>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Tipo fijo 2,65% TIN</li>
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Cuota: ~€760/mes a 30 años</li>
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Sin comisión de apertura</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl p-6 border border-gray-200 shadow-soft bg-white">
+          <div class="text-sm text-gray-500">Autónomo + asalariada</div>
+          <h3 class="mt-1 font-semibold text-brand-primary">Mixta 10 años fijo + variable</h3>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>10 años al 2,35% TIN</li>
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Luego Euríbor + 0,59</li>
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Vinculación mínima</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl p-6 border border-gray-200 shadow-soft bg-white">
+          <div class="text-sm text-gray-500">Subrogación + novación</div>
+          <h3 class="mt-1 font-semibold text-brand-primary">Bajamos cuota un 12,4%</h3>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>De 895€ → 784€/mes</li>
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Sin gastos de gestión para el cliente</li>
+            <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Firma en 4 semanas</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -211,6 +256,110 @@
     </div>
   </section>
 
+  <!-- GUÍA GRATUITA -->
+  <section id="guia" class="py-14 md:py-20 bg-[linear-gradient(180deg,_#f7f7f5_0%,_#ffffff_100%)]">
+    <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <div class="flex items-center gap-3">
+          <i data-lucide="book-open" class="h-6 w-6 text-brand-primary"></i>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary">Guía gratuita: 7 claves para conseguir mejor hipoteca</h2>
+        </div>
+        <p class="mt-3 text-gray-700">Checklist para preparar tu expediente, mejorar scoring y negociar condiciones.</p>
+        <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+          <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Documentación que te da ventaja</li>
+          <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Errores que disparan el tipo</li>
+          <li class="flex gap-2"><i data-lucide="check" class="h-4 w-4 text-brand-accent"></i>Cómo mejorar la viabilidad en 14 días</li>
+        </ul>
+        <form id="guideForm" class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <input id="guideEmail" type="email" required class="rounded-xl px-4 py-3 border border-black/10 sm:col-span-2" placeholder="Tu email">
+          <button class="rounded-xl px-5 py-3 font-semibold bg-brand-primary text-white hover:brightness-110">Recibir guía por WhatsApp</button>
+        </form>
+        <p class="mt-2 text-xs text-gray-500">Envío inmediato por WhatsApp · Sin spam.</p>
+      </div>
+      <div class="rounded-3xl p-6 border border-gray-200 bg-white shadow-card">
+        <img src="/assets/guide-cover.jpg" alt="Portada Guía Hipotecas BKC" class="w-full h-auto rounded-2xl"
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop';" />
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="py-14 md:py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center gap-3">
+        <i data-lucide="stars" class="h-6 w-6 text-brand-primary"></i>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary">Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-3xl p-6 border border-gray-200 bg-white shadow-soft">
+          <div class="flex items-center gap-1 text-amber-500">
+            <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i>
+          </div>
+          <p class="mt-3 text-gray-800">“Rápidos y muy claros. Conseguimos mejor tipo de lo que nos daba nuestro banco.”</p>
+          <div class="mt-4 text-sm font-semibold text-brand-secondary">María y David — Compra 1ª vivienda</div>
+        </div>
+        <div class="rounded-3xl p-6 border border-gray-200 bg-white shadow-soft">
+          <div class="flex items-center gap-1 text-amber-500">
+            <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i>
+          </div>
+          <p class="mt-3 text-gray-800">“Nos llevaron de la mano. La oferta final bajó nuestra cuota un 12%.”</p>
+          <div class="mt-4 text-sm font-semibold text-brand-secondary">Pablo — Subrogación + novación</div>
+        </div>
+        <div class="rounded-3xl p-6 border border-gray-200 bg-white shadow-soft">
+          <div class="flex items-center gap-1 text-amber-500">
+            <i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i><i data-lucide="star" class="w-4 h-4"></i>
+          </div>
+          <p class="mt-3 text-gray-800">“Profesionales y cercanos. Firmamos sin sustos y con todo explicado.”</p>
+          <div class="mt-4 text-sm font-semibold text-brand-secondary">Lucía — Autopromoción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-14 md:py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center gap-3">
+        <i data-lucide="help-circle" class="h-6 w-6 text-white"></i>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">Preguntas frecuentes</h2>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <details class="rounded-2xl bg-white/90 p-5 shadow" open>
+          <summary class="cursor-pointer font-semibold text-brand-primary flex items-center justify-between">
+            ¿Cobramos por el estudio?
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-secondary"></i>
+          </summary>
+        <p class="mt-2 text-sm text-gray-700">El estudio inicial es gratuito. Solo cobramos si se firma la operación o mediante acuerdos con entidades. Te lo dejamos por escrito antes de avanzar.</p>
+        </details>
+
+        <details class="rounded-2xl bg-white/90 p-5 shadow">
+          <summary class="cursor-pointer font-semibold text-brand-primary flex items-center justify-between">
+            ¿Cuánto puedo financiar?
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-secondary"></i>
+          </summary>
+          <p class="mt-2 text-sm text-gray-700">Habitual hasta el 80% del menor entre tasación y precio. Segunda vivienda 60–70% aprox., según perfil y política de riesgo.</p>
+        </details>
+
+        <details class="rounded-2xl bg-white/90 p-5 shadow">
+          <summary class="cursor-pointer font-semibold text-brand-primary flex items-center justify-between">
+            ¿Plazos habituales?
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-secondary"></i>
+          </summary>
+          <p class="mt-2 text-sm text-gray-700">Entre 20 y 30 años para vivienda habitual, dependiendo de edad, ingresos y entidad.</p>
+        </details>
+
+        <details class="rounded-2xl bg-white/90 p-5 shadow">
+          <summary class="cursor-pointer font-semibold text-brand-primary flex items-center justify-between">
+            ¿Qué es la FEIN?
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-secondary"></i>
+          </summary>
+          <p class="mt-2 text-sm text-gray-700">La Ficha Europea de Información Normalizada: oferta personalizada con condiciones económicas y gastos. La revisamos contigo punto por punto.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section id="contacto" class="py-14 md:py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-8 items-center">
@@ -228,20 +377,23 @@
       </div>
       <div class="rounded-3xl p-6 md:p-8 border border-black/10 shadow-sm">
         <h3 class="text-xl font-bold text-brand-primary">Solicita tu estudio</h3>
-        <form class="mt-4 grid grid-cols-1 gap-4" onsubmit="event.preventDefault();window.location.href='https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca'">
-          <input class="rounded-xl px-4 py-3 border border-black/10" placeholder="Nombre completo">
-          <input type="tel" class="rounded-xl px-4 py-3 border border-black/10" placeholder="Teléfono">
-          <input type="email" class="rounded-xl px-4 py-3 border border-black/10" placeholder="Email">
-          <select class="rounded-xl px-4 py-3 border border-black/10">
+        <form id="contactForm" class="mt-4 grid grid-cols-1 gap-4">
+          <input id="cfName" class="rounded-xl px-4 py-3 border border-black/10" placeholder="Nombre completo" required>
+          <input id="cfPhone" type="tel" class="rounded-xl px-4 py-3 border border-black/10" placeholder="Teléfono" required>
+          <input id="cfEmail" type="email" class="rounded-xl px-4 py-3 border border-black/10" placeholder="Email (opcional)">
+          <select id="cfTipo" class="rounded-xl px-4 py-3 border border-black/10">
             <option>Vivienda habitual</option>
             <option>Segunda residencia</option>
             <option>Inversión</option>
+            <option>Subrogación</option>
+            <option>Novación</option>
           </select>
+          <textarea id="cfMsg" class="rounded-xl px-4 py-3 border border-black/10" rows="3" placeholder="Cuéntanos tu caso (opcional)"></textarea>
           <label class="flex items-start gap-3 text-xs text-black/80">
-            <input type="checkbox" class="mt-1">
+            <input type="checkbox" class="mt-1" required>
             <span>He leído y acepto la <a class="underline" href="#">Política de Privacidad</a>.</span>
           </label>
-          <button class="rounded-2xl px-5 py-3 font-semibold text-white bg-brand-secondary hover:brightness-110">Enviar</button>
+          <button class="rounded-2xl px-5 py-3 font-semibold text-white bg-brand-secondary hover:brightness-110">Enviar por WhatsApp</button>
           <div class="flex items-center gap-2 mt-3 text-xs text-black/60">
             <i data-lucide="shield" class="h-4 w-4"></i>
             Cumplimiento Ley 5/2019 y RGPD. Datos cifrados.
@@ -279,8 +431,11 @@
   <script>
     // Iconos
     lucide.createIcons();
+
     // Utilidad €
     const eur = n => new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
+
+    // Simulador
     function calc(){
       const C=+cap.value||0, i=(+int.value||0)/100/12, n=(+pla.value||0)*12;
       let q=0; if(C>0&&i>0&&n>0) q=(C*i)/(1-Math.pow(1+i,-n));
@@ -288,9 +443,45 @@
       capOut.textContent=eur(C); intOut.textContent=(+int.value||0)+'%'; plaOut.textContent=(+pla.value||0)+' años'; cuoOut.textContent=q?eur(q):'—';
     }
     calc(); document.getElementById('year').textContent=new Date().getFullYear();
+
+    // ===== Envío a WhatsApp =====
+    const PHONE = "34617476695"; // internacional sin +
+
+    function openWhatsAppWith(message){
+      const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    // Contacto -> WhatsApp
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const name = document.getElementById("cfName").value.trim();
+      const phone = document.getElementById("cfPhone").value.trim();
+      const email = document.getElementById("cfEmail").value.trim();
+      const tipo = document.getElementById("cfTipo").value;
+      const msg  = document.getElementById("cfMsg").value.trim();
+
+      const text = `Hola, soy ${name}. Quiero un estudio de hipoteca.
+📞 Teléfono: ${phone}
+📧 Email: ${email || "—"}
+🏷️ Tipo de operación: ${tipo}
+📝 Mensaje: ${msg || "—"}`;
+
+      openWhatsAppWith(text);
+    });
+
+    // Guía -> WhatsApp
+    document.getElementById("guideForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const email = document.getElementById("guideEmail").value.trim();
+      const text = `Hola, me gustaría recibir la Guía Gratuita de Hipotecas (7 claves).
+📧 Email: ${email}`;
+      openWhatsAppWith(text);
+    });
   </script>
 </body>
 </html>
+
 
 
 
