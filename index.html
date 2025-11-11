@@ -1,320 +1,256 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Hipotecas BKC · Comparamos bancos y negociamos por ti</title>
-  <meta name="description" content="Estudio gratuito y rápido. Comparamos más de 20 bancos, negociamos por ti y te acompañamos hasta la firma.">
-  <!-- Tailwind -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hipotecas BKC · Tu hipoteca sin complicaciones</title>
+  <meta name="description" content="Comparamos bancos, negociamos por ti y te acompañamos hasta la firma. Estudio gratuito y respuesta en 24–48h.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            bk: {
-              ink: "#0f172a",      /* texto principal */
-              slate: "#334155",    /* texto secundario */
-              sky: "#0ea5e9",      /* acento 1 */
-              blue: "#2563eb",     /* acento 2 */
-              mint: "#10b981",     /* checks/éxito */
-              fog: "#f6f7f9",      /* fondo secciones claras */
-              line: "#e5e7eb"      /* líneas suaves */
-            }
+            brand: {
+              dark: "#0b261f",
+              primary: "#0d3b2e",
+              secondary: "#1e5f4a",
+              accent: "#c8a34a",
+              light: "#f6f7f9",
+            },
           },
           boxShadow: {
-            soft: "0 10px 30px rgba(15,23,42,.08)"
+            soft: "0 8px 28px rgba(0,0,0,.08)",
+            card: "0 18px 50px rgba(2,6,23,.12)"
           },
-          borderRadius: {
-            xl2: "1.25rem"
-          }
-        }
-      }
-    }
+          borderRadius: { "2xl": "1.25rem" }
+        },
+      },
+    };
   </script>
-  <!-- Iconos -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    html{scroll-behavior:smooth}
-    .glass{backdrop-filter: blur(10px) saturate(140%)}
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #0f172a; }
+    .fade { backdrop-filter: blur(10px); }
   </style>
 </head>
-<body class="bg-white text-bk-ink">
 
+<body class="bg-white text-gray-900">
   <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-white/90 glass border-b border-bk-line">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-bk-blue"></div>
-        <div class="leading-tight">
-          <div class="font-extrabold">Hipotecas BKC</div>
-          <div class="text-xs text-bk-slate/70">Estudio gratuito · 24–48h</div>
+  <header class="sticky top-0 z-50 bg-white/85 border-b border-gray-100 fade">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl" style="background:#c8a34a"></div>
+        <div>
+          <div class="font-extrabold text-lg">Hipotecas BKC</div>
+          <div class="text-xs text-gray-500">Tu hipoteca sin complicaciones</div>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#simulador" class="text-bk-slate hover:text-bk-ink">Simulador</a>
-        <a href="#como" class="text-bk-slate hover:text-bk-ink">Cómo funciona</a>
-        <a href="#bancos" class="text-bk-slate hover:text-bk-ink">Bancos</a>
-        <a href="#ventajas" class="text-bk-slate hover:text-bk-ink">Ventajas</a>
-        <a href="#faq" class="text-bk-slate hover:text-bk-ink">FAQ</a>
-        <a href="#contacto" class="text-bk-slate hover:text-bk-ink">Contacto</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#como" class="hover:text-brand-primary">Cómo funciona</a>
+        <a href="#bancos" class="hover:text-brand-primary">Bancos</a>
+        <a href="#simulador" class="hover:text-brand-primary">Simulador</a>
+        <a href="#faq" class="hover:text-brand-primary">FAQ</a>
+        <a href="#contacto" class="hover:text-brand-primary">Contacto</a>
       </nav>
-      <a href="https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca"
-         target="_blank"
-         class="hidden md:inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-bk-blue text-white text-sm font-semibold">
+      <a href="https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca" target="_blank"
+        class="hidden md:inline-flex items-center gap-2 bg-brand-primary text-white text-sm font-semibold px-4 py-2 rounded-xl">
         <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
       </a>
     </div>
   </header>
 
-  <!-- HERO con barra de “petición” estilo Openteca -->
-  <section class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-10 md:py-14 grid md:grid-cols-[1.05fr,0.95fr] gap-10 items-center">
+  <!-- HERO (imagen optimizada + microconfianza) -->
+  <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-secondary text-white">
+    <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">La mejor hipoteca para ti,<br class="hidden md:block"> sin vueltas.</h1>
-        <p class="mt-4 text-lg text-bk-slate">Comparamos más de 20 bancos, negociamos por ti y te acompañamos hasta la firma. Estudio gratuito en 24–48h.</p>
-
-        <!-- Barra de inputs horizontal (CTA principal) -->
-        <form class="mt-6 w-full bg-white border border-bk-line rounded-xl2 shadow-soft p-3 grid md:grid-cols-[1fr,1fr,1fr,auto] gap-2"
-              onsubmit="event.preventDefault();document.getElementById('simulador').scrollIntoView({behavior:'smooth'});">
-          <input id="capIn" type="number" class="w-full px-4 py-3 border border-bk-line rounded-lg" placeholder="Capital (€)" />
-          <input id="intIn" type="number" step="0.01" class="w-full px-4 py-3 border border-bk-line rounded-lg" placeholder="Interés (%)" />
-          <input id="plaIn" type="number" class="w-full px-4 py-3 border border-bk-line rounded-lg" placeholder="Plazo (años)" />
-          <button class="px-5 py-3 rounded-lg bg-bk-blue text-white font-semibold">Calcular</button>
-        </form>
-
-        <!-- Píldoras confianza -->
-        <div class="mt-4 flex flex-wrap gap-2 text-sm">
-          <span class="inline-flex items-center gap-2 bg-bk-fog px-3 py-1.5 rounded-full"><i data-lucide="clock" class="w-4 h-4 text-bk-blue"></i>Respuesta 24–48h</span>
-          <span class="inline-flex items-center gap-2 bg-bk-fog px-3 py-1.5 rounded-full"><i data-lucide="badge-check" class="w-4 h-4 text-bk-blue"></i>Ley 5/2019</span>
-          <span class="inline-flex items-center gap-2 bg-bk-fog px-3 py-1.5 rounded-full"><i data-lucide="sparkles" class="w-4 h-4 text-bk-blue"></i>Sin letra pequeña</span>
+        <p class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-white/10 border border-white/20">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Estudio gratuito · Respuesta 24–48h
+        </p>
+        <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">
+          Consigue tu <span class="text-brand-accent">hipoteca ideal</span> sin moverte de casa
+        </h1>
+        <p class="mt-4 text-lg text-white/90">Comparamos bancos, negociamos por ti y te acompañamos hasta la firma. Sin letra pequeña.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#simulador" class="bg-brand-accent text-brand-dark font-semibold px-6 py-3 rounded-xl">Simular cuota</a>
+          <a href="#contacto" class="border border-white/60 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10">Solicitar estudio</a>
+        </div>
+        <!-- Micro confianza bajo CTA (reduce riesgo) -->
+        <div class="mt-4 flex flex-wrap gap-2 text-sm text-white/90">
+          <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full"><i data-lucide="badge-check" class="w-4 h-4"></i> Cumplimos Ley 5/2019</span>
+          <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full"><i data-lucide="shield-check" class="w-4 h-4"></i> Datos protegidos (RGPD)</span>
+          <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full"><i data-lucide="banknote" class="w-4 h-4"></i> +20 bancos comparados</span>
         </div>
       </div>
-
-      <!-- Tarjeta “solicitud rápida” -->
-      <div class="bg-white border border-bk-line rounded-xl2 p-6 shadow-soft">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-bk-blue/10 flex items-center justify-center">
-            <i data-lucide="shield" class="w-5 h-5 text-bk-blue"></i>
-          </div>
-          <div>
-            <p class="font-semibold">Solicitud rápida</p>
-            <p class="text-xs text-bk-slate/70">Sin compromiso · Transparente</p>
-          </div>
-        </div>
-        <form class="mt-5 grid gap-3 text-sm" onsubmit="event.preventDefault();window.location.href='https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca'">
-          <input class="rounded-lg border border-bk-line px-4 py-3" placeholder="Nombre y apellidos" required>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input class="rounded-lg border border-bk-line px-4 py-3" placeholder="Teléfono" required>
-            <input type="email" class="rounded-lg border border-bk-line px-4 py-3" placeholder="Email" required>
-          </div>
-          <select class="rounded-lg border border-bk-line px-4 py-3">
-            <option>Compra de vivienda</option><option>Subrogación</option><option>Novación</option><option>Autopromoción</option>
-          </select>
-          <label class="text-xs text-bk-slate/80 flex gap-2 mt-1">
-            <input type="checkbox" required> Acepto la Política de Privacidad.
-          </label>
-          <button class="mt-1 rounded-lg bg-bk-sky text-white px-5 py-3 font-semibold">Quiero mi estudio</button>
-        </form>
-      </div>
+      <!-- Imagen con luz natural, ambiente hogar -->
+      <img src="https://images.unsplash.com/photo-1603570417039-19c1d7b8e6d3?q=80&w=1400&auto=format&fit=crop"
+        class="rounded-3xl shadow-card" alt="Pareja revisando su hipoteca desde casa">
     </div>
   </section>
 
-  <!-- Banda bancos/beneficios (inspiración Openteca) -->
-  <section id="bancos" class="bg-bk-fog border-y border-bk-line">
-    <div class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-6 gap-4 text-sm text-bk-slate/80">
-      <div class="text-center">+20 bancos</div>
-      <div class="text-center">48h respuesta</div>
-      <div class="text-center">Ley 5/2019</div>
-      <div class="text-center">Tasación incluida</div>
-      <div class="text-center">Acompañamos a notaría</div>
-      <div class="text-center">Mejores condiciones</div>
+  <!-- BANCOS -->
+  <section id="bancos" class="bg-white border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <div class="flex justify-between items-end flex-wrap gap-3">
+        <h2 class="text-2xl font-bold text-brand-primary">Trabajamos con las principales entidades</h2>
+        <span class="text-xs text-gray-500">*Sin exclusividad; buscamos la mejor opción para tu perfil.</span>
+      </div>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center">
+        <img src="https://logo.clearbit.com/santander.com" alt="Santander"
+          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+        <img src="https://logo.clearbit.com/bbva.com" alt="BBVA"
+          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+        <img src="https://logo.clearbit.com/caixabank.es" alt="CaixaBank"
+          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+        <img src="https://logo.clearbit.com/bancsabadell.com" alt="Sabadell"
+          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+        <img src="https://logo.clearbit.com/bankinter.com" alt="Bankinter"
+          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+        <img src="https://logo.clearbit.com/ing.com" alt="ING"
+          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+      </div>
+      <p class="mt-4 text-xs text-gray-500">
+        Marcas pertenecientes a sus respectivos titulares. Los logotipos se muestran con fines identificativos.
+      </p>
     </div>
   </section>
 
-  <!-- Ventajas -->
-  <section id="ventajas" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-14">
-      <h2 class="text-3xl md:text-4xl font-extrabold">¿Por qué con Hipotecas BKC?</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 border border-bk-line rounded-xl bg-white shadow-soft">
-          <div class="flex items-center gap-2 text-bk-blue font-semibold"><i data-lucide="percent" class="w-5 h-5"></i> Mejores condiciones</div>
-          <p class="mt-2 text-bk-slate text-sm">Comparamos con múltiples entidades para lograr tipo y cuota competitivos según tu perfil.</p>
+  <!-- CÓMO FUNCIONA -->
+  <section id="como" class="bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold text-brand-primary text-center">Cómo funciona</h2>
+      <div class="mt-10 grid md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
+          <i data-lucide="phone" class="w-6 h-6 mx-auto text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">1. Llamada</h3>
+          <p class="text-sm text-gray-600 mt-1">Analizamos tu caso en 10–15 minutos.</p>
         </div>
-        <div class="p-6 border border-bk-line rounded-xl bg-white shadow-soft">
-          <div class="flex items-center gap-2 text-bk-blue font-semibold"><i data-lucide="shield" class="w-5 h-5"></i> Seguridad y transparencia</div>
-          <p class="mt-2 text-bk-slate text-sm">Cumplimos Ley 5/2019. Explicamos cada coste, documento y paso.</p>
+        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
+          <i data-lucide="notebook-pen" class="w-6 h-6 mx-auto text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">2. Estudio</h3>
+          <p class="text-sm text-gray-600 mt-1">Comparamos ofertas reales en múltiples bancos.</p>
         </div>
-        <div class="p-6 border border-bk-line rounded-xl bg-white shadow-soft">
-          <div class="flex items-center gap-2 text-bk-blue font-semibold"><i data-lucide="clock" class="w-5 h-5"></i> Ahorro de tiempo</div>
-          <p class="mt-2 text-bk-slate text-sm">Centralizamos gestión: bancos, tasación y notaría. Tú decides con claridad.</p>
+        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
+          <i data-lucide="file-text" class="w-6 h-6 mx-auto text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">3. Aprobación (FEIN)</h3>
+          <p class="text-sm text-gray-600 mt-1">Te explicamos condiciones y gastos sin letra pequeña.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
+          <i data-lucide="building-2" class="w-6 h-6 mx-auto text-brand-primary"></i>
+          <h3 class="font-semibold mt-3">4. Firma</h3>
+          <p class="text-sm text-gray-600 mt-1">Acompañamiento total hasta notaría.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Cómo funciona (4 pasos muy limpio) -->
-  <section id="como" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-6">
-      <div class="grid md:grid-cols-4 gap-6 text-sm">
-        <div class="p-6 border border-bk-line rounded-xl">
-          <div class="font-semibold flex items-center gap-2"><i data-lucide="phone" class="w-5 h-5 text-bk-blue"></i> 1. Llamada</div>
-          <p class="mt-2 text-bk-slate">Entendemos tu caso en 10–15 min.</p>
+  <!-- SIMULADOR -->
+  <section id="simulador" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="bg-brand-light p-8 rounded-3xl shadow-soft">
+        <div class="flex items-center gap-3 mb-6">
+          <i data-lucide="calculator" class="w-5 h-5 text-brand-primary"></i>
+          <h2 class="text-2xl font-bold text-brand-primary">Simulador rápido</h2>
         </div>
-        <div class="p-6 border border-bk-line rounded-xl">
-          <div class="font-semibold flex items-center gap-2"><i data-lucide="notebook-pen" class="w-5 h-5 text-bk-blue"></i> 2. Estudio</div>
-          <p class="mt-2 text-bk-slate">Viabilidad y banco objetivo.</p>
-        </div>
-        <div class="p-6 border border-bk-line rounded-xl">
-          <div class="font-semibold flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-bk-blue"></i> 3. Oferta/FEIN</div>
-          <p class="mt-2 text-bk-slate">Tasación y oferta personalizada.</p>
-        </div>
-        <div class="p-6 border border-bk-line rounded-xl">
-          <div class="font-semibold flex items-center gap-2"><i data-lucide="building-2" class="w-5 h-5 text-bk-blue"></i> 4. Firma</div>
-          <p class="mt-2 text-bk-slate">Coordinamos notaría y llaves.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Simulador compacto -->
-  <section id="simulador" class="bg-bk-fog">
-    <div class="max-w-7xl mx-auto px-4 py-14">
-      <div class="bg-white border border-bk-line rounded-xl2 p-6 shadow-soft">
-        <div class="flex items-center gap-3">
-          <i data-lucide="calculator" class="w-5 h-5 text-bk-blue"></i>
-          <h3 class="font-semibold">Simulador rápido</h3>
-        </div>
-        <div class="mt-4 grid md:grid-cols-[1fr,1fr,1fr,auto] gap-3">
-          <input id="cap" type="number" class="rounded-lg border border-bk-line px-4 py-3" value="180000" placeholder="Capital €">
-          <input id="int" type="number" step="0.01" class="rounded-lg border border-bk-line px-4 py-3" value="3.25" placeholder="Interés %">
-          <input id="pla" type="number" class="rounded-lg border border-bk-line px-4 py-3" value="30" placeholder="Años">
-          <button onclick="calc()" class="rounded-lg px-5 py-3 bg-bk-blue text-white font-semibold">Calcular</button>
+        <div class="grid md:grid-cols-[1fr,1fr,1fr,auto] gap-3">
+          <input id="cap" type="number" class="rounded-xl px-4 py-3 border border-gray-200" value="180000" placeholder="Capital €">
+          <input id="int" type="number" step="0.01" class="rounded-xl px-4 py-3 border border-gray-200" value="3.25" placeholder="Interés %">
+          <input id="pla" type="number" class="rounded-xl px-4 py-3 border border-gray-200" value="30" placeholder="Años">
+          <button onclick="calc()" class="rounded-xl px-5 py-3 bg-brand-primary text-white font-semibold">Calcular</button>
         </div>
         <div class="mt-4 grid sm:grid-cols-4 gap-3 text-sm">
-          <div class="rounded-lg bg-bk-fog p-4"><p class="text-bk-slate">Capital</p><p id="capOut" class="font-semibold">—</p></div>
-          <div class="rounded-lg bg-bk-fog p-4"><p class="text-bk-slate">Interés</p><p id="intOut" class="font-semibold">—</p></div>
-          <div class="rounded-lg bg-bk-fog p-4"><p class="text-bk-slate">Plazo</p><p id="plaOut" class="font-semibold">—</p></div>
-          <div class="rounded-lg bg-bk-blue/5 p-4"><p class="text-bk-blue">Cuota/mes</p><p id="cuota" class="font-extrabold text-lg text-bk-blue">—</p></div>
+          <div class="rounded-xl bg-white p-4"><p class="text-gray-500">Capital</p><p id="capOut" class="font-semibold">—</p></div>
+          <div class="rounded-xl bg-white p-4"><p class="text-gray-500">Interés</p><p id="intOut" class="font-semibold">—</p></div>
+          <div class="rounded-xl bg-white p-4"><p class="text-gray-500">Plazo</p><p id="plaOut" class="font-semibold">—</p></div>
+          <div class="rounded-xl bg-brand-accent/10 p-4"><p class="text-gray-600">Cuota</p><p id="cuota" class="font-extrabold text-brand-primary text-lg">—</p></div>
         </div>
-        <p class="text-xs text-bk-slate mt-2">*Orientativo. No incluye seguros ni comisiones.</p>
+        <!-- Microconfianza bajo simulador -->
+        <div class="mt-4 text-xs text-gray-600 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-brand-primary"></i> Datos protegidos (RGPD)</span>
+          <span class="inline-flex items-center gap-1.5"><i data-lucide="badge-check" class="w-4 h-4 text-brand-primary"></i> Cumplimiento Ley 5/2019</span>
+          <span class="inline-flex items-center gap-1.5"><i data-lucide="banknote" class="w-4 h-4 text-brand-primary"></i> +20 bancos comparados</span>
+        </div>
+        <p class="text-xs text-gray-500 mt-2">*Cálculo orientativo; no incluye seguros ni comisiones.</p>
       </div>
     </div>
   </section>
 
-  <!-- Testimonios estilo tarjetas limpias -->
-  <section class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 py-14">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Opiniones reales</h2>
-      <div class="mt-8 grid md:grid-cols-3 gap-6">
-        <div class="p-6 border border-bk-line rounded-xl shadow-soft text-sm">“Mejoraron el tipo que me daba mi banco; ahorro 110 €/mes.”<div class="mt-3 font-semibold text-bk-blue">Marta & Luis</div></div>
-        <div class="p-6 border border-bk-line rounded-xl shadow-soft text-sm">“Trato claro y cercano. Todo explicado, sin sorpresas.”<div class="mt-3 font-semibold text-bk-blue">Javier R.</div></div>
-        <div class="p-6 border border-bk-line rounded-xl shadow-soft text-sm">“Acompañamiento total hasta notaría. 10/10.”<div class="mt-3 font-semibold text-bk-blue">Patricia G.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
+  <!-- FAQ (opcional; placeholder simple) -->
   <section id="faq" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 pb-14">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Preguntas frecuentes</h2>
-      <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
-        <div class="p-6 border border-bk-line rounded-xl">
-          <b>¿Cobra BKC por el estudio?</b>
-          <p class="text-bk-slate mt-2">El estudio inicial es gratuito. Antes de avanzar, te indicamos por escrito cualquier coste o acuerdo con entidades.</p>
-        </div>
-        <div class="p-6 border border-bk-line rounded-xl">
-          <b>¿Cuánto puedo financiar?</b>
-          <p class="text-bk-slate mt-2">Habitual: hasta el 80% del menor entre precio y tasación. Segunda vivienda: 60–70% aprox.</p>
-        </div>
-        <div class="p-6 border border-bk-line rounded-xl">
-          <b>¿Plazos habituales?</b>
-          <p class="text-bk-slate mt-2">20–30 años según perfil, edad y política de riesgo del banco.</p>
-        </div>
-        <div class="p-6 border border-bk-line rounded-xl">
-          <b>¿Qué es la FEIN?</b>
-          <p class="text-bk-slate mt-2">Es la Ficha Europea de Información Normalizada: tu oferta personalizada con condiciones y gastos.</p>
-        </div>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 pb-6">
+      <!-- Aquí puedes añadir FAQs si lo deseas -->
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="bg-bk-fog">
-    <div class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-8 items-start">
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-start">
       <div>
-        <h2 class="text-3xl md:text-4xl font-extrabold">Hablemos de tu hipoteca</h2>
-        <p class="mt-3 text-bk-slate">Calle de la Canaleja 3, Alcorcón (Madrid)</p>
-        <div class="mt-5 space-y-2">
-          <div><i data-lucide="phone" class="inline w-4 h-4 text-bk-blue"></i> +34 617 476 695</div>
-          <div><i data-lucide="mail" class="inline w-4 h-4 text-bk-blue"></i> info@hipotecasbkc.es</div>
+        <h2 class="text-3xl font-extrabold text-brand-primary">Hablemos de tu hipoteca</h2>
+        <p class="mt-3 text-gray-600">Calle de la Canaleja 3, Alcorcón (Madrid)</p>
+        <div class="mt-5 text-gray-800 space-y-2">
+          <p><i data-lucide="phone" class="inline w-4 h-4 text-brand-primary"></i> +34 617 476 695</p>
+          <p><i data-lucide="mail" class="inline w-4 h-4 text-brand-primary"></i> info@hipotecasbkc.es</p>
         </div>
         <a href="https://wa.me/34617476695" target="_blank"
-           class="mt-6 inline-flex items-center gap-2 rounded-lg px-5 py-3 bg-bk-blue text-white font-semibold">
-          WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i>
+          class="mt-6 inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-brand-primary text-white font-semibold">
+          Escribir por WhatsApp <i data-lucide="message-circle" class="w-4 h-4"></i>
         </a>
       </div>
-      <div class="bg-white border border-bk-line rounded-xl2 p-6 shadow-soft">
-        <h3 class="text-lg font-semibold">Solicita tu estudio</h3>
-        <form class="mt-4 grid gap-3 text-sm" onsubmit="event.preventDefault();window.location.href='https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca'">
-          <input class="rounded-lg px-4 py-3 border border-bk-line" placeholder="Nombre" required>
-          <input class="rounded-lg px-4 py-3 border border-bk-line" placeholder="Teléfono" required>
-          <select class="rounded-lg px-4 py-3 border border-bk-line">
-            <option>Vivienda habitual</option><option>Segunda residencia</option><option>Inversión</option>
+
+      <div class="bg-white p-8 rounded-3xl shadow-soft grid gap-4 text-sm border border-gray-200">
+        <form onsubmit="event.preventDefault();window.location.href='https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca'">
+          <input class="rounded-xl px-4 py-3 border border-gray-200 w-full" placeholder="Nombre" required>
+          <input class="rounded-xl px-4 py-3 border border-gray-200 w-full mt-3" placeholder="Teléfono" required>
+          <select class="rounded-xl px-4 py-3 border border-gray-200 w-full mt-3">
+            <option>Vivienda habitual</option>
+            <option>Segunda residencia</option>
+            <option>Inversión</option>
           </select>
-          <button class="rounded-lg px-5 py-3 bg-bk-sky text-white font-semibold">Enviar</button>
+          <label class="text-xs text-gray-600 flex gap-2 mt-3"><input type="checkbox" required> Acepto la Política de Privacidad.</label>
+          <button class="w-full mt-3 rounded-xl px-5 py-3 bg-brand-accent text-brand-dark font-semibold">Enviar solicitud</button>
         </form>
+
+        <!-- Franja de confianza (debajo del formulario) -->
+        <div class="mt-4 grid sm:grid-cols-3 gap-3 text-xs">
+          <div class="flex items-center gap-2 bg-brand-light rounded-lg px-3 py-2 border border-gray-200">
+            <i data-lucide="badge-check" class="w-4 h-4 text-brand-primary"></i> Ley 5/2019
+          </div>
+          <div class="flex items-center gap-2 bg-brand-light rounded-lg px-3 py-2 border border-gray-200">
+            <i data-lucide="shield-check" class="w-4 h-4 text-brand-primary"></i> RGPD
+          </div>
+          <div class="flex items-center gap-2 bg-brand-light rounded-lg px-3 py-2 border border-gray-200">
+            <i data-lucide="banknote" class="w-4 h-4 text-brand-primary"></i> +20 bancos
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-white border-t border-bk-line">
-    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-sm">
-      <div><b>Hipotecas BKC</b><p class="mt-2 text-bk-slate">Intermediación de crédito inmobiliario. Acompañamiento integral hasta la firma.</p></div>
-      <div><b>Legal</b><ul class="mt-2 space-y-1 text-bk-slate"><li>Privacidad</li><li>Cookies</li><li>Aviso legal</li></ul></div>
-      <div><b>Contacto</b><p class="mt-2 text-bk-slate">info@hipotecasbkc.es · +34 617 476 695</p></div>
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+      <div><b>Hipotecas BKC</b><p class="mt-2">Intermediación de crédito inmobiliario. Acompañamiento integral.</p></div>
+      <div><b>Legal</b><ul class="mt-2 space-y-1"><li>Privacidad</li><li>Cookies</li><li>Aviso legal</li></ul></div>
+      <div><b>Contacto</b><p class="mt-2">info@hipotecasbkc.es · +34 617 476 695</p></div>
     </div>
-    <div class="text-center pb-6 text-xs text-bk-slate/70">© <span id="year"></span> Hipotecas BKC. Todos los derechos reservados.</div>
+    <div class="text-center pb-6 text-xs text-gray-400">© <span id="year"></span> Hipotecas BKC. Todos los derechos reservados.</div>
   </footer>
-
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca"
-     target="_blank"
-     class="fixed right-4 bottom-4 z-50 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-bk-blue text-white font-semibold shadow-soft">
-    <i data-lucide="message-circle" class="w-4 h-4"></i> Estudio por WhatsApp
-  </a>
 
   <script>
     lucide.createIcons();
     const eur = n => new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);
     function calc(){
-      // Fuentes: inputs del simulador principal
-      const cap = +document.getElementById('cap').value || +document.getElementById('capIn').value || 0;
-      const intr = (+document.getElementById('int').value || +document.getElementById('intIn').value || 0)/100/12;
-      const pla = (+document.getElementById('pla').value || +document.getElementById('plaIn').value || 0)*12;
-      let q = 0;
-      if (cap>0 && intr>0 && pla>0) q = (cap*intr)/(1-Math.pow(1+intr,-pla));
-      // Muestra
-      const qEl = document.getElementById('cuota');
-      if (!qEl) {
-        // crea contenedor inline si no existe
-        const box = document.querySelector('#simulador .grid.sm\\:grid-cols-4') || document.querySelector('#simulador');
-        if (box) {
-          const div = document.createElement('div'); div.id='cuotaBox';
-          div.className="rounded-lg bg-bk-blue/5 p-4 mt-4 text-sm";
-          div.innerHTML = `<p class="text-bk-blue">Cuota/mes</p><p id="cuota" class="font-extrabold text-lg text-bk-blue">—</p>`;
-          box.appendChild(div);
-        }
-      }
-      (document.getElementById('cuota')||{}).textContent = q?eur(q):'—';
-      const set = (id,val)=>{ const el=document.getElementById(id); if(el) el.textContent=val; };
-      set('capOut', eur(cap));
-      set('intOut', ((+document.getElementById('int').value || +document.getElementById('intIn').value || 0)) + "%");
-      set('plaOut', ((+document.getElementById('pla').value || +document.getElementById('plaIn').value || 0)) + " años");
+      const C=+cap.value||0, i=(+int.value||0)/100/12, n=(+pla.value||0)*12;
+      let q=0; if(C>0&&i>0&&n>0) q=(C*i)/(1-Math.pow(1+i,-n));
+      document.getElementById('cuota').textContent=q?eur(q):'—';
+      capOut.textContent=eur(C); intOut.textContent=(+int.value||0)+'%'; plaOut.textContent=(+pla.value||0)+' años';
     }
-    // Inicial
-    document.getElementById('year').textContent = new Date().getFullYear();
+    calc(); document.getElementById('year').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
