@@ -36,6 +36,24 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; color: #0f172a; }
     .fade { backdrop-filter: blur(10px); }
+
+    /* ===== Marquee infinito de bancos (barra dinámica) ===== */
+    @keyframes bancos-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .bancos-marquee { overflow:hidden; position:relative; }
+    .bancos-track {
+      display:flex; align-items:center; gap:3.5rem;
+      width:max-content;
+      animation: bancos-scroll 28s linear infinite;
+      will-change: transform;
+    }
+    .bancos-marquee:hover .bancos-track { animation-play-state: paused; }
+    @media (prefers-reduced-motion: reduce){ .bancos-track { animation:none; } }
+    .logo-img { height: 2.25rem; object-fit: contain; opacity:.95; transition: transform .2s ease, opacity .2s ease; }
+    .logo-img:hover { transform: scale(1.05); opacity:1; }
+    @media (min-width: 768px){ .logo-img { height: 2.5rem; } }
   </style>
 </head>
 
@@ -51,9 +69,12 @@
         </div>
       </a>
       <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#como" class="hover:text-brand-primary">Cómo funciona</a>
+        <a href="#por-que" class="hover:text-brand-primary">Por qué BKC</a>
         <a href="#bancos" class="hover:text-brand-primary">Bancos</a>
+        <a href="#comparativa" class="hover:text-brand-primary">Comparativa</a>
         <a href="#simulador" class="hover:text-brand-primary">Simulador</a>
+        <a href="#casos" class="hover:text-brand-primary">Casos reales</a>
+        <a href="#opiniones" class="hover:text-brand-primary">Opiniones</a>
         <a href="#faq" class="hover:text-brand-primary">FAQ</a>
         <a href="#contacto" class="hover:text-brand-primary">Contacto</a>
       </nav>
@@ -64,7 +85,7 @@
     </div>
   </header>
 
-  <!-- HERO (imagen optimizada + microconfianza) -->
+  <!-- HERO -->
   <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-secondary text-white">
     <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -79,71 +100,124 @@
           <a href="#simulador" class="bg-brand-accent text-brand-dark font-semibold px-6 py-3 rounded-xl">Simular cuota</a>
           <a href="#contacto" class="border border-white/60 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10">Solicitar estudio</a>
         </div>
-        <!-- Micro confianza bajo CTA (reduce riesgo) -->
         <div class="mt-4 flex flex-wrap gap-2 text-sm text-white/90">
           <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full"><i data-lucide="badge-check" class="w-4 h-4"></i> Cumplimos Ley 5/2019</span>
           <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full"><i data-lucide="shield-check" class="w-4 h-4"></i> Datos protegidos (RGPD)</span>
           <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full"><i data-lucide="banknote" class="w-4 h-4"></i> +20 bancos comparados</span>
         </div>
       </div>
-      <!-- Imagen con luz natural, ambiente hogar -->
       <img src="https://images.unsplash.com/photo-1603570417039-19c1d7b8e6d3?q=80&w=1400&auto=format&fit=crop"
         class="rounded-3xl shadow-card" alt="Pareja revisando su hipoteca desde casa">
     </div>
   </section>
 
-  <!-- BANCOS -->
+  <!-- BANDA: POR QUÉ ELEGIRNOS -->
+  <section id="por-que" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+      <div class="flex items-center gap-3 p-4 rounded-2xl border border-gray-200 bg-white shadow-soft">
+        <i data-lucide="percent" class="w-5 h-5 text-brand-primary"></i>
+        <div><b>Mejores condiciones</b><p class="text-gray-600">Negociamos tipo y vinculación según tu perfil.</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-2xl border border-gray-200 bg-white shadow-soft">
+        <i data-lucide="clock" class="w-5 h-5 text-brand-primary"></i>
+        <div><b>Rápido</b><p class="text-gray-600">Pre-estudio en 24–48h laborables.</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-2xl border border-gray-200 bg-white shadow-soft">
+        <i data-lucide="file-text" class="w-5 h-5 text-brand-primary"></i>
+        <div><b>Transparencia total</b><p class="text-gray-600">FEIN explicada, sin letra pequeña.</p></div>
+      </div>
+      <div class="flex items-center gap-3 p-4 rounded-2xl border border-gray-200 bg-white shadow-soft">
+        <i data-lucide="handshake" class="w-5 h-5 text-brand-primary"></i>
+        <div><b>Acompañamiento</b><p class="text-gray-600">Desde el estudio hasta la firma en notaría.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANCOS CON MARQUEE (DINÁMICO, EN COLOR) -->
   <section id="bancos" class="bg-white border-y border-gray-100">
     <div class="max-w-7xl mx-auto px-4 py-10">
       <div class="flex justify-between items-end flex-wrap gap-3">
         <h2 class="text-2xl font-bold text-brand-primary">Trabajamos con las principales entidades</h2>
         <span class="text-xs text-gray-500">*Sin exclusividad; buscamos la mejor opción para tu perfil.</span>
       </div>
-      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center">
-        <img src="https://logo.clearbit.com/santander.com" alt="Santander"
-          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
-        <img src="https://logo.clearbit.com/bbva.com" alt="BBVA"
-          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
-        <img src="https://logo.clearbit.com/caixabank.es" alt="CaixaBank"
-          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
-        <img src="https://logo.clearbit.com/bancsabadell.com" alt="Sabadell"
-          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
-        <img src="https://logo.clearbit.com/bankinter.com" alt="Bankinter"
-          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
-        <img src="https://logo.clearbit.com/ing.com" alt="ING"
-          class="h-9 mx-auto grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition">
+
+      <div class="bancos-marquee mt-6 rounded-2xl border border-gray-200 bg-white/80 shadow-soft">
+        <div class="bancos-track py-6 px-6">
+          <!-- TIRA 1 -->
+          <img src="https://logo.clearbit.com/santander.com"      alt="Santander"   class="logo-img" />
+          <img src="https://logo.clearbit.com/bbva.com"            alt="BBVA"        class="logo-img" />
+          <img src="https://logo.clearbit.com/caixabank.es"        alt="CaixaBank"   class="logo-img" />
+          <img src="https://logo.clearbit.com/bancsabadell.com"    alt="Sabadell"    class="logo-img" />
+          <img src="https://logo.clearbit.com/bankinter.com"       alt="Bankinter"   class="logo-img" />
+          <img src="https://logo.clearbit.com/ing.com"             alt="ING"         class="logo-img" />
+          <img src="https://logo.clearbit.com/openbank.es"         alt="Openbank"    class="logo-img" />
+          <img src="https://logo.clearbit.com/ibercaja.es"         alt="Ibercaja"    class="logo-img" />
+          <img src="https://logo.clearbit.com/kutxabank.es"        alt="Kutxabank"   class="logo-img" />
+          <img src="https://logo.clearbit.com/unicajabanco.es"     alt="Unicaja"     class="logo-img" />
+          <img src="https://logo.clearbit.com/abanca.com"          alt="ABANCA"      class="logo-img" />
+          <img src="https://logo.clearbit.com/evobanco.com"        alt="EVO Banco"   class="logo-img" />
+          <!-- TIRA 2 (duplicada para bucle perfecto) -->
+          <img src="https://logo.clearbit.com/santander.com"      alt="Santander"   class="logo-img" />
+          <img src="https://logo.clearbit.com/bbva.com"            alt="BBVA"        class="logo-img" />
+          <img src="https://logo.clearbit.com/caixabank.es"        alt="CaixaBank"   class="logo-img" />
+          <img src="https://logo.clearbit.com/bancsabadell.com"    alt="Sabadell"    class="logo-img" />
+          <img src="https://logo.clearbit.com/bankinter.com"       alt="Bankinter"   class="logo-img" />
+          <img src="https://logo.clearbit.com/ing.com"             alt="ING"         class="logo-img" />
+          <img src="https://logo.clearbit.com/openbank.es"         alt="Openbank"    class="logo-img" />
+          <img src="https://logo.clearbit.com/ibercaja.es"         alt="Ibercaja"    class="logo-img" />
+          <img src="https://logo.clearbit.com/kutxabank.es"        alt="Kutxabank"   class="logo-img" />
+          <img src="https://logo.clearbit.com/unicajabanco.es"     alt="Unicaja"     class="logo-img" />
+          <img src="https://logo.clearbit.com/abanca.com"          alt="ABANCA"      class="logo-img" />
+          <img src="https://logo.clearbit.com/evobanco.com"        alt="EVO Banco"   class="logo-img" />
+        </div>
       </div>
-      <p class="mt-4 text-xs text-gray-500">
-        Marcas pertenecientes a sus respectivos titulares. Los logotipos se muestran con fines identificativos.
-      </p>
+
+      <p class="mt-4 text-xs text-gray-500">Marcas pertenecientes a sus respectivos titulares. Logotipos con fines identificativos.</p>
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
-  <section id="como" class="bg-brand-light">
-    <div class="max-w-7xl mx-auto px-4 py-16">
-      <h2 class="text-3xl font-extrabold text-brand-primary text-center">Cómo funciona</h2>
-      <div class="mt-10 grid md:grid-cols-4 gap-6">
-        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
-          <i data-lucide="phone" class="w-6 h-6 mx-auto text-brand-primary"></i>
-          <h3 class="font-semibold mt-3">1. Llamada</h3>
-          <p class="text-sm text-gray-600 mt-1">Analizamos tu caso en 10–15 minutos.</p>
+  <!-- COMPARATIVA -->
+  <section id="comparativa" class="bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <h2 class="text-3xl font-extrabold text-brand-primary text-center">¿BKC o ir banco por banco?</h2>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-soft">
+        <div class="grid grid-cols-3 text-sm font-semibold bg-gray-50">
+          <div class="p-3">Criterio</div>
+          <div class="p-3 text-brand-primary">Con BKC</div>
+          <div class="p-3">Por tu cuenta</div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
-          <i data-lucide="notebook-pen" class="w-6 h-6 mx-auto text-brand-primary"></i>
-          <h3 class="font-semibold mt-3">2. Estudio</h3>
-          <p class="text-sm text-gray-600 mt-1">Comparamos ofertas reales en múltiples bancos.</p>
+        <div class="divide-y">
+          <div class="grid grid-cols-3 text-sm">
+            <div class="p-3">Tiempo de búsqueda</div>
+            <div class="p-3 text-brand-primary">Días (centralizamos)</div>
+            <div class="p-3">Semanas</div>
+          </div>
+          <div class="grid grid-cols-3 text-sm">
+            <div class="p-3">Comparación real</div>
+            <div class="p-3 text-brand-primary">+20 bancos</div>
+            <div class="p-3">3–4 entidades</div>
+          </div>
+          <div class="grid grid-cols-3 text-sm">
+            <div class="p-3">Negociación</div>
+            <div class="p-3 text-brand-primary">Tratamos condiciones</div>
+            <div class="p-3">Condición estándar</div>
+          </div>
+          <div class="grid grid-cols-3 text-sm">
+            <div class="p-3">Transparencia</div>
+            <div class="p-3 text-brand-primary">FEIN explicada</div>
+            <div class="p-3">Términos complejos</div>
+          </div>
+          <div class="grid grid-cols-3 text-sm">
+            <div class="p-3">Acompañamiento</div>
+            <div class="p-3 text-brand-primary">Hasta la firma</div>
+            <div class="p-3">Vas solo</div>
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
-          <i data-lucide="file-text" class="w-6 h-6 mx-auto text-brand-primary"></i>
-          <h3 class="font-semibold mt-3">3. Aprobación (FEIN)</h3>
-          <p class="text-sm text-gray-600 mt-1">Te explicamos condiciones y gastos sin letra pequeña.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft text-center">
-          <i data-lucide="building-2" class="w-6 h-6 mx-auto text-brand-primary"></i>
-          <h3 class="font-semibold mt-3">4. Firma</h3>
-          <p class="text-sm text-gray-600 mt-1">Acompañamiento total hasta notaría.</p>
-        </div>
+      </div>
+      <div class="text-center mt-6">
+        <a href="#contacto" class="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-brand-primary text-white font-semibold">
+          Empezar ahora <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -168,7 +242,6 @@
           <div class="rounded-xl bg-white p-4"><p class="text-gray-500">Plazo</p><p id="plaOut" class="font-semibold">—</p></div>
           <div class="rounded-xl bg-brand-accent/10 p-4"><p class="text-gray-600">Cuota</p><p id="cuota" class="font-extrabold text-brand-primary text-lg">—</p></div>
         </div>
-        <!-- Microconfianza bajo simulador -->
         <div class="mt-4 text-xs text-gray-600 flex flex-wrap items-center gap-3">
           <span class="inline-flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-brand-primary"></i> Datos protegidos (RGPD)</span>
           <span class="inline-flex items-center gap-1.5"><i data-lucide="badge-check" class="w-4 h-4 text-brand-primary"></i> Cumplimiento Ley 5/2019</span>
@@ -179,10 +252,151 @@
     </div>
   </section>
 
-  <!-- FAQ (opcional; placeholder simple) -->
+  <!-- CASOS REALES -->
+  <section id="casos" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <h2 class="text-3xl font-extrabold text-brand-primary">Casos reales</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+        <!-- Caso 1 -->
+        <div class="border border-gray-200 rounded-2xl p-6 shadow-soft">
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <i data-lucide="user" class="w-4 h-4"></i> Perfil: pareja nómina estable
+          </div>
+          <h3 class="mt-2 font-semibold">Hipoteca fija 30 años</h3>
+          <div class="mt-3">
+            <div class="flex justify-between"><span class="text-gray-500">Antes</span><b>€1.040/mes</b></div>
+            <div class="w-full h-2 bg-gray-200 rounded mt-1">
+              <div class="h-2 bg-red-400 rounded" style="width:78%"></div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="flex justify-between"><span class="text-gray-500">Con BKC</span><b>€928/mes</b></div>
+            <div class="w-full h-2 bg-gray-200 rounded mt-1">
+              <div class="h-2 bg-emerald-500 rounded" style="width:64%"></div>
+            </div>
+          </div>
+          <p class="mt-3 text-gray-600">Ahorro aprox. €112/mes negociando tipo y vinculaciones.</p>
+        </div>
+        <!-- Caso 2 -->
+        <div class="border border-gray-200 rounded-2xl p-6 shadow-soft">
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <i data-lucide="briefcase" class="w-4 h-4"></i> Perfil: autónomo
+          </div>
+          <h3 class="mt-2 font-semibold">Mixta 10F + variable</h3>
+          <div class="mt-3">
+            <div class="flex justify-between"><span class="text-gray-500">Antes</span><b>€1.180/mes</b></div>
+            <div class="w-full h-2 bg-gray-200 rounded mt-1">
+              <div class="h-2 bg-red-400 rounded" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="flex justify-between"><span class="text-gray-500">Con BKC</span><b>€1.035/mes</b></div>
+            <div class="w-full h-2 bg-gray-200 rounded mt-1">
+              <div class="h-2 bg-emerald-500 rounded" style="width:72%"></div>
+            </div>
+          </div>
+          <p class="mt-3 text-gray-600">Ajuste de plazo + bonificaciones realistas (sin sobresorpresas).</p>
+        </div>
+        <!-- Caso 3 -->
+        <div class="border border-gray-200 rounded-2xl p-6 shadow-soft">
+          <div class="flex items-center gap-2 text-xs text-gray-500">
+            <i data-lucide="home" class="w-4 h-4"></i> Perfil: segunda residencia
+          </div>
+          <h3 class="mt-2 font-semibold">Variable Euríbor + dif.</h3>
+          <div class="mt-3">
+            <div class="flex justify-between"><span class="text-gray-500">Antes</span><b>€890/mes</b></div>
+            <div class="w-full h-2 bg-gray-200 rounded mt-1">
+              <div class="h-2 bg-red-400 rounded" style="width:65%"></div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="flex justify-between"><span class="text-gray-500">Con BKC</span><b>€812/mes</b></div>
+            <div class="w-full h-2 bg-gray-200 rounded mt-1">
+              <div class="h-2 bg-emerald-500 rounded" style="width:58%"></div>
+            </div>
+          </div>
+          <p class="mt-3 text-gray-600">Tramo variable mejorado con menor vinculación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <h2 class="text-3xl font-extrabold text-brand-primary">Lo que dicen nuestros clientes</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-soft text-sm">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop" alt="">
+            <div><b class="block">Marta & Luis</b><span class="text-gray-500 text-xs">Hipoteca fija</span></div>
+          </div>
+          <p class="mt-3">“Mejoraron el tipo que tenía con mi banco y ahorro ~110 €/mes. Súper claros.”</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-soft text-sm">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop" alt="">
+            <div><b class="block">Javier R.</b><span class="text-gray-500 text-xs">Subrogación</span></div>
+          </div>
+          <p class="mt-3">“Todo explicado sin sorpresas. Acompañamiento a notaría de 10.”</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-soft text-sm">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=300&auto=format&fit=crop" alt="">
+            <div><b class="block">Patricia G.</b><span class="text-gray-500 text-xs">Mixta</span></div>
+          </div>
+          <p class="mt-3">“Rápidos y cercanos. Noté que realmente comparan y negocian.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET (WhatsApp pre-relleno) -->
+  <section class="bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-extrabold text-brand-primary">Guía gratuita: “Los 7 errores al pedir hipoteca”</h2>
+        <p class="mt-3 text-gray-600">Aprende qué mirar en la FEIN, cómo afecta el Euríbor, y qué vinculación evita costes innecesarios.</p>
+        <ul class="mt-4 text-sm text-gray-700 list-disc ml-5">
+          <li>Checklist descargable</li>
+          <li>Ejemplos claros</li>
+          <li>Plantilla para comparar bancos</li>
+        </ul>
+        <a href="https://wa.me/34617476695?text=Hola%20BKC%2C%20quiero%20la%20Gu%C3%ADa%20gratuita.%20Mi%20nombre%20es%3A%20_____%20y%20mi%20email%20es%3A%20_____%40_____."
+           target="_blank"
+           class="mt-6 inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-brand-accent text-brand-dark font-semibold">
+          Quiero la guía <i data-lucide="download" class="w-4 h-4"></i>
+        </a>
+        <p class="mt-2 text-xs text-gray-500">*Te enviaremos el PDF a tu email.</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-soft p-6">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop" class="rounded-xl" alt="Guía hipotecaria">
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section id="faq" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 pb-6">
-      <!-- Aquí puedes añadir FAQs si lo deseas -->
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <h2 class="text-3xl font-extrabold text-brand-primary">Preguntas frecuentes</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <details class="bg-brand-light rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer">¿Cobra BKC por el estudio?</summary>
+          <p class="mt-2 text-sm text-gray-700">El estudio inicial es gratuito. Te informamos por escrito antes de avanzar si hay honorarios o si nos retribuye la entidad.</p>
+        </details>
+        <details class="bg-brand-light rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer">¿Cuánto puedo financiar?</summary>
+          <p class="mt-2 text-sm text-gray-700">Vivienda habitual: hasta el 80% del menor entre tasación y precio. Segunda vivienda: 60–70% aprox., según perfil.</p>
+        </details>
+        <details class="bg-brand-light rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer">¿Plazos habituales?</summary>
+          <p class="mt-2 text-sm text-gray-700">20–30 años según edad, estabilidad de ingresos y política de riesgo de la entidad.</p>
+        </details>
+        <details class="bg-brand-light rounded-xl p-4">
+          <summary class="font-semibold cursor-pointer">¿Qué es la FEIN?</summary>
+          <p class="mt-2 text-sm text-gray-700">La Ficha Europea de Información Normalizada: recoge condiciones económicas y gastos. La revisamos contigo.</p>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -215,7 +429,6 @@
           <button class="w-full mt-3 rounded-xl px-5 py-3 bg-brand-accent text-brand-dark font-semibold">Enviar solicitud</button>
         </form>
 
-        <!-- Franja de confianza (debajo del formulario) -->
         <div class="mt-4 grid sm:grid-cols-3 gap-3 text-xs">
           <div class="flex items-center gap-2 bg-brand-light rounded-lg px-3 py-2 border border-gray-200">
             <i data-lucide="badge-check" class="w-4 h-4 text-brand-primary"></i> Ley 5/2019
@@ -240,6 +453,38 @@
     </div>
     <div class="text-center pb-6 text-xs text-gray-400">© <span id="year"></span> Hipotecas BKC. Todos los derechos reservados.</div>
   </footer>
+
+  <!-- STICKY CTA (móvil) -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div class="mx-3 mb-3 rounded-xl shadow-card overflow-hidden">
+      <a href="https://wa.me/34617476695?text=Quiero%20un%20estudio%20de%20hipoteca"
+         class="flex items-center justify-center gap-2 px-4 py-3 bg-brand-primary text-white font-semibold">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Pide tu estudio por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- JSON-LD: SEO LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FinancialService",
+    "name":"Hipotecas BKC",
+    "image":"https://bkc-hipotecas-qvvy.vercel.app/icon.png",
+    "url":"https://bkc-hipotecas-qvvy.vercel.app/",
+    "telephone":"+34 617 476 695",
+    "email":"info@hipotecasbkc.es",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Calle de la Canaleja 3",
+      "addressLocality":"Alcorcón",
+      "addressRegion":"Madrid",
+      "addressCountry":"ES"
+    },
+    "areaServed":"ES",
+    "priceRange":"€€"
+  }
+  </script>
 
   <script>
     lucide.createIcons();
